@@ -5,8 +5,8 @@
         "package": "alchemy",
         "repositoryURL": "https://github.com/alchemy-swift/alchemy",
         "state": {
-          "branch": "aws",
-          "revision": "4eaca8576b01afdbb376033782c03f9eb6e0adc7",
+          "branch": "main",
+          "revision": "49f7e1a3a042a7ffd5f3052c8edb7f95044627dd",
           "version": null
         }
       },

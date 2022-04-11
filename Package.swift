@@ -10,7 +10,7 @@ let package = Package(
         .library(name: "AlchemyS3", targets: ["AlchemyS3"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/alchemy-swift/alchemy", .branch("aws")),
+        .package(url: "https://github.com/alchemy-swift/alchemy", .branch("main")),
         .package(url: "https://github.com/soto-project/soto.git", from: "5.0.0"),
     ],
     targets: [
