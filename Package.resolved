@@ -1,0 +1,331 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "alchemy",
+        "repositoryURL": "https://github.com/alchemy-swift/alchemy",
+        "state": {
+          "branch": "aws",
+          "revision": "4eaca8576b01afdbb376033782c03f9eb6e0adc7",
+          "version": null
+        }
+      },
+      {
+        "package": "async-http-client",
+        "repositoryURL": "https://github.com/swift-server/async-http-client.git",
+        "state": {
+          "branch": null,
+          "revision": "7a4dfe026f6ee0f8ad741b58df74c60af296365d",
+          "version": "1.9.0"
+        }
+      },
+      {
+        "package": "async-kit",
+        "repositoryURL": "https://github.com/vapor/async-kit.git",
+        "state": {
+          "branch": null,
+          "revision": "e2f741640364c1d271405da637029ea6a33f754e",
+          "version": "1.11.1"
+        }
+      },
+      {
+        "package": "cron",
+        "repositoryURL": "https://github.com/alchemy-swift/cron.git",
+        "state": {
+          "branch": null,
+          "revision": "15de53dc72d9854400d507629c6ebcde99ce5189",
+          "version": "2.3.2"
+        }
+      },
+      {
+        "package": "Fakery",
+        "repositoryURL": "https://github.com/vadymmarkov/Fakery",
+        "state": {
+          "branch": null,
+          "revision": "71cb3bf36a808534659d1248780c2bf3c4c4fc91",
+          "version": "5.1.0"
+        }
+      },
+      {
+        "package": "fusion",
+        "repositoryURL": "https://github.com/alchemy-swift/fusion",
+        "state": {
+          "branch": null,
+          "revision": "6a4a8bd71db91fc906e1de1e2799b88a0f867a0c",
+          "version": "0.3.0"
+        }
+      },
+      {
+        "package": "hummingbird",
+        "repositoryURL": "https://github.com/hummingbird-project/hummingbird.git",
+        "state": {
+          "branch": null,
+          "revision": "d0078148aa4d824e1b6bf1d00273fe4b451da1ee",
+          "version": "0.16.0"
+        }
+      },
+      {
+        "package": "hummingbird-core",
+        "repositoryURL": "https://github.com/hummingbird-project/hummingbird-core.git",
+        "state": {
+          "branch": null,
+          "revision": "9616361c11bd42fca3dc06ac60bed6ad106c46c3",
+          "version": "0.13.5"
+        }
+      },
+      {
+        "package": "jmespath.swift",
+        "repositoryURL": "https://github.com/adam-fowler/jmespath.swift.git",
+        "state": {
+          "branch": null,
+          "revision": "4513d319c4aaa6c3b2ac18e1e6566a803515ad91",
+          "version": "1.0.2"
+        }
+      },
+      {
+        "package": "multipart-kit",
+        "repositoryURL": "https://github.com/vapor/multipart-kit",
+        "state": {
+          "branch": null,
+          "revision": "2dd9368a3c9580792b77c7ef364f3735909d9996",
+          "version": "4.5.1"
+        }
+      },
+      {
+        "package": "mysql-kit",
+        "repositoryURL": "https://github.com/vapor/mysql-kit",
+        "state": {
+          "branch": null,
+          "revision": "f54e0876fce2d68551be0e704b3a94f78eedb9f8",
+          "version": "4.5.0"
+        }
+      },
+      {
+        "package": "mysql-nio",
+        "repositoryURL": "https://github.com/vapor/mysql-nio.git",
+        "state": {
+          "branch": null,
+          "revision": "f0e8ad7e18e870e8665311d70bf3f01dcd6024a8",
+          "version": "1.4.0"
+        }
+      },
+      {
+        "package": "papyrus",
+        "repositoryURL": "https://github.com/alchemy-swift/papyrus",
+        "state": {
+          "branch": "main",
+          "revision": "23426717ee1d888d1245d8fc4ff0d65527a4f054",
+          "version": null
+        }
+      },
+      {
+        "package": "Plot",
+        "repositoryURL": "https://github.com/johnsundell/Plot.git",
+        "state": {
+          "branch": null,
+          "revision": "b358860fe565eb53e98b1f5807eb5939c8124547",
+          "version": "0.11.0"
+        }
+      },
+      {
+        "package": "pluralize",
+        "repositoryURL": "https://github.com/alchemy-swift/pluralize",
+        "state": {
+          "branch": null,
+          "revision": "184bca7602cbdfd60fab89b8f49e310564e4e9bf",
+          "version": "1.0.1"
+        }
+      },
+      {
+        "package": "postgres-kit",
+        "repositoryURL": "https://github.com/vapor/postgres-kit",
+        "state": {
+          "branch": null,
+          "revision": "221e3e39e9c7d9b4999f38038c6b5f3122f4d438",
+          "version": "2.6.0"
+        }
+      },
+      {
+        "package": "postgres-nio",
+        "repositoryURL": "https://github.com/vapor/postgres-nio.git",
+        "state": {
+          "branch": null,
+          "revision": "def4fe8c8b4f58ce394771f27910dca107e9d8c3",
+          "version": "1.9.0"
+        }
+      },
+      {
+        "package": "Rainbow",
+        "repositoryURL": "https://github.com/onevcat/Rainbow",
+        "state": {
+          "branch": null,
+          "revision": "e0dada9cd44e3fa7ec3b867e49a8ddbf543e3df3",
+          "version": "4.0.1"
+        }
+      },
+      {
+        "package": "RediStack",
+        "repositoryURL": "https://github.com/alchemy-swift/RediStack.git",
+        "state": {
+          "branch": "ssl-support-1.2.0",
+          "revision": "19e50bd052f6fce8868814a64be69ce5e319d93d",
+          "version": null
+        }
+      },
+      {
+        "package": "soto",
+        "repositoryURL": "https://github.com/soto-project/soto.git",
+        "state": {
+          "branch": null,
+          "revision": "b98994beabdced18cbedbe50e947e6f2c8e0d602",
+          "version": "5.12.1"
+        }
+      },
+      {
+        "package": "soto-core",
+        "repositoryURL": "https://github.com/soto-project/soto-core.git",
+        "state": {
+          "branch": null,
+          "revision": "3079d17f2576cff5f2a3f68865629af455c673d1",
+          "version": "5.9.3"
+        }
+      },
+      {
+        "package": "sql-kit",
+        "repositoryURL": "https://github.com/vapor/sql-kit.git",
+        "state": {
+          "branch": null,
+          "revision": "afc74d888649f2b2a2f8cc7963be5eb179409610",
+          "version": "3.17.0"
+        }
+      },
+      {
+        "package": "sqlite-kit",
+        "repositoryURL": "https://github.com/vapor/sqlite-kit",
+        "state": {
+          "branch": null,
+          "revision": "0b3b12b032991de3ab5999b428a652ec29139746",
+          "version": "4.1.0"
+        }
+      },
+      {
+        "package": "sqlite-nio",
+        "repositoryURL": "https://github.com/vapor/sqlite-nio.git",
+        "state": {
+          "branch": null,
+          "revision": "6481dd0b01112d082dd7eb362782126e81964138",
+          "version": "1.1.0"
+        }
+      },
+      {
+        "package": "swift-argument-parser",
+        "repositoryURL": "https://github.com/apple/swift-argument-parser",
+        "state": {
+          "branch": null,
+          "revision": "f3c9084a71ef4376f2fabbdf1d3d90a49f1fabdb",
+          "version": "1.1.2"
+        }
+      },
+      {
+        "package": "swift-atomics",
+        "repositoryURL": "https://github.com/apple/swift-atomics.git",
+        "state": {
+          "branch": null,
+          "revision": "919eb1d83e02121cdb434c7bfc1f0c66ef17febe",
+          "version": "1.0.2"
+        }
+      },
+      {
+        "package": "swift-backtrace",
+        "repositoryURL": "https://github.com/swift-server/swift-backtrace.git",
+        "state": {
+          "branch": null,
+          "revision": "d3e04a9d4b3833363fb6192065b763310b156d54",
+          "version": "1.3.1"
+        }
+      },
+      {
+        "package": "swift-crypto",
+        "repositoryURL": "https://github.com/apple/swift-crypto.git",
+        "state": {
+          "branch": null,
+          "revision": "067254c79435de759aeef4a6a03e43d087d61312",
+          "version": "2.0.5"
+        }
+      },
+      {
+        "package": "swift-log",
+        "repositoryURL": "https://github.com/apple/swift-log.git",
+        "state": {
+          "branch": null,
+          "revision": "5d66f7ba25daf4f94100e7022febf3c75e37a6c7",
+          "version": "1.4.2"
+        }
+      },
+      {
+        "package": "swift-metrics",
+        "repositoryURL": "https://github.com/apple/swift-metrics.git",
+        "state": {
+          "branch": null,
+          "revision": "eadb828f878fed144387e3845866225bb7082c56",
+          "version": "2.3.0"
+        }
+      },
+      {
+        "package": "swift-nio",
+        "repositoryURL": "https://github.com/apple/swift-nio.git",
+        "state": {
+          "branch": null,
+          "revision": "d6e3762e0a5f7ede652559f53623baf11006e17c",
+          "version": "2.39.0"
+        }
+      },
+      {
+        "package": "swift-nio-extras",
+        "repositoryURL": "https://github.com/apple/swift-nio-extras.git",
+        "state": {
+          "branch": null,
+          "revision": "f73ca5ee9c6806800243f1ac415fcf82de9a4c91",
+          "version": "1.10.2"
+        }
+      },
+      {
+        "package": "swift-nio-http2",
+        "repositoryURL": "https://github.com/apple/swift-nio-http2.git",
+        "state": {
+          "branch": null,
+          "revision": "50c25c132b140e62b45e90b5a76f13ded02c8a46",
+          "version": "1.20.1"
+        }
+      },
+      {
+        "package": "swift-nio-ssl",
+        "repositoryURL": "https://github.com/apple/swift-nio-ssl.git",
+        "state": {
+          "branch": null,
+          "revision": "b5260a31c2a72a89fa684f5efb3054d8725a2316",
+          "version": "2.18.0"
+        }
+      },
+      {
+        "package": "swift-nio-transport-services",
+        "repositoryURL": "https://github.com/apple/swift-nio-transport-services.git",
+        "state": {
+          "branch": null,
+          "revision": "8ab824b140d0ebcd87e9149266ddc353e3705a3e",
+          "version": "1.11.4"
+        }
+      },
+      {
+        "package": "swift-service-lifecycle",
+        "repositoryURL": "https://github.com/swift-server/swift-service-lifecycle.git",
+        "state": {
+          "branch": null,
+          "revision": "531c6f8cd11b7c5706be98facfa4a9b0fe049192",
+          "version": "1.0.0-alpha.10"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
