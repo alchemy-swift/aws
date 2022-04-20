@@ -49,10 +49,12 @@ private struct S3Filesystem: FilesystemProvider {
     
     func create(_ filepath: String, content: ByteContent) async throws -> File {
         let path = resolvedPath(filepath)
+        let pathExtension = path.components(separatedBy: ".").last
+        let contentType = pathExtension.map { ContentType(fileExtension: $0) } ?? nil
         var req: S3.PutObjectRequest
         switch content {
         case .buffer(let buffer):
-            req = S3.PutObjectRequest(body: .byteBuffer(buffer), bucket: bucket, key: path)
+            req = S3.PutObjectRequest(body: .byteBuffer(buffer), bucket: bucket, contentType: contentType?.value, key: path)
         case .stream(let stream):
             req = S3.PutObjectRequest(body: .stream { eventLoop in
                 stream.read(on: eventLoop).map { output in
@@ -63,7 +65,7 @@ private struct S3Filesystem: FilesystemProvider {
                         return .end
                     }
                 }
-            }, bucket: bucket, key: path)
+            }, bucket: bucket, contentType: contentType?.value, key: path)
         }
         
         _ = try await s3.putObject(req)
