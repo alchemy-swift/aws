@@ -4,8 +4,8 @@ import SotoS3
 
 extension Filesystem {
     /// Create a filesystem backed by an S3 or S3 compatible storage.
-    public static func s3(key: String, secret: String, bucket: String, root: String = "", region: Region, endpoint: String? = nil) -> Filesystem {
-        Filesystem(provider: S3Filesystem(key: key, secret: secret, bucket: bucket, root: root, region: region, endpoint: endpoint))
+    public static func s3(key: String, secret: String, bucket: String, root: String = "", region: Region, endpoint: String? = nil, httpClientProvider: AWSClient.HTTPClientProvider = .createNewWithEventLoopGroup(Loop.group)) -> Filesystem {
+        Filesystem(provider: S3Filesystem(key: key, secret: secret, bucket: bucket, root: root, region: region, endpoint: endpoint, httpClientProvider: httpClientProvider))
     }
     
     /// Create a filesystem backed by an S3 or S3 compatible storage.
@@ -26,18 +26,17 @@ private struct S3Filesystem: FilesystemProvider {
         self.root = root
     }
     
-    init(key: String, secret: String, bucket: String, root: String, region: Region, endpoint: String? = nil) {
-        var config = HTTPClient.Configuration()
-        config.httpVersion = .http1Only
-        let httpClient = HTTPClient(eventLoopGroupProvider: .shared(Loop.group), configuration: config)
-        let client = AWSClient(
-            credentialProvider: .static(accessKeyId: key, secretAccessKey: secret),
-            httpClientProvider: .shared(httpClient)
-        )
-        
-        self.s3 = S3(client: client, region: region, endpoint: endpoint)
+    init(key: String, secret: String, bucket: String, root: String, region: Region, endpoint: String? = nil, httpClientProvider: AWSClient.HTTPClientProvider) {
         self.bucket = bucket
         self.root = root
+        self.s3 = S3(
+            client: AWSClient(
+                credentialProvider: .static(accessKeyId: key, secretAccessKey: secret),
+                httpClientProvider: httpClientProvider
+            ),
+            region: region,
+            endpoint: endpoint
+        )
     }
     
     // MARK: - FilesystemProvider
