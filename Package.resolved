@@ -177,8 +177,8 @@
         "repositoryURL": "https://github.com/soto-project/soto.git",
         "state": {
           "branch": null,
-          "revision": "b98994beabdced18cbedbe50e947e6f2c8e0d602",
-          "version": "5.12.1"
+          "revision": "9c938aadbbb33d6ed54d04dd6ba494f7f12e0905",
+          "version": "6.0.0"
         }
       },
       {
@@ -186,8 +186,8 @@
         "repositoryURL": "https://github.com/soto-project/soto-core.git",
         "state": {
           "branch": null,
-          "revision": "3079d17f2576cff5f2a3f68865629af455c673d1",
-          "version": "5.9.3"
+          "revision": "8e63c0f80db61f01c346f5109863bc2be29093e7",
+          "version": "6.0.0"
         }
       },
       {

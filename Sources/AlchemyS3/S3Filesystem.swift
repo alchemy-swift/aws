@@ -1,4 +1,5 @@
 import Alchemy
+import AsyncHTTPClient
 import SotoS3
 
 extension Filesystem {
@@ -26,9 +27,12 @@ private struct S3Filesystem: FilesystemProvider {
     }
     
     init(key: String, secret: String, bucket: String, root: String, region: Region, endpoint: String? = nil) {
+        var config = HTTPClient.Configuration()
+        config.httpVersion = .http1Only
+        let httpClient = HTTPClient(eventLoopGroupProvider: .shared(Loop.group), configuration: config)
         let client = AWSClient(
             credentialProvider: .static(accessKeyId: key, secretAccessKey: secret),
-            httpClientProvider: .createNewWithEventLoopGroup(Loop.group)
+            httpClientProvider: .shared(httpClient)
         )
         
         self.s3 = S3(client: client, region: region, endpoint: endpoint)
@@ -75,10 +79,12 @@ private struct S3Filesystem: FilesystemProvider {
     func exists(_ filepath: String) async throws -> Bool {
         do {
             let path = resolvedPath(filepath)
+            print("bucket \(bucket) path \(path)")
             let req = S3.HeadObjectRequest(bucket: bucket, key: path)
             _ = try await s3.headObject(req)
             return true
         } catch {
+            print("err \(error)")
             return false
         }
     }

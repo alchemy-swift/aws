@@ -11,7 +11,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/alchemy-swift/alchemy", .branch("main")),
-        .package(url: "https://github.com/soto-project/soto.git", from: "5.0.0"),
+        .package(url: "https://github.com/soto-project/soto.git", .upToNextMajor(from: "6.0.0")),
     ],
     targets: [
         .target(
