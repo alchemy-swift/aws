@@ -79,13 +79,15 @@ private struct S3Filesystem: FilesystemProvider {
     func exists(_ filepath: String) async throws -> Bool {
         do {
             let path = resolvedPath(filepath)
-            print("bucket \(bucket) path \(path)")
             let req = S3.HeadObjectRequest(bucket: bucket, key: path)
             _ = try await s3.headObject(req)
             return true
         } catch {
-            print("err \(error)")
-            return false
+            if let error = error as? S3ErrorType, error == .notFound {
+                return false
+            } else {
+                throw error
+            }
         }
     }
     
