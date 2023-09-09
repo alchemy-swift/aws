@@ -14,6 +14,12 @@ extension Filesystem {
     }
 }
 
+extension Region: LosslessStringConvertible {
+    public init?(_ description: String) {
+        self.init(rawValue: description)
+    }
+}
+
 /// A `FilesystemProvider` for interacting with S3 or S3 compatible storage.
 private struct S3Filesystem: FilesystemProvider {
     private let s3: S3
