@@ -4,7 +4,7 @@ import SotoS3
 
 extension Filesystem {
     /// Create a filesystem backed by an S3 or S3 compatible storage.
-    public static func s3(key: String, secret: String, bucket: String, root: String = "", region: Region, endpoint: String? = nil, httpClientProvider: AWSClient.HTTPClientProvider = .createNewWithEventLoopGroup(Loop.group)) -> Filesystem {
+    public static func s3(key: String, secret: String, bucket: String, root: String = "", region: Region, endpoint: String? = nil, httpClientProvider: AWSClient.HTTPClientProvider = .createNewWithEventLoopGroup(LoopGroup)) -> Filesystem {
         Filesystem(provider: S3Filesystem(key: key, secret: secret, bucket: bucket, root: root, region: region, endpoint: endpoint, httpClientProvider: httpClientProvider))
     }
     
@@ -46,11 +46,11 @@ private struct S3Filesystem: FilesystemProvider {
         let req = S3.GetObjectRequest(bucket: bucket, key: path)
         let res = try await s3.getObject(req)
         let size = Int(res.contentLength ?? 0)
-        let content: ByteContent? = res.body?.asByteBuffer().map { .buffer($0) }
+        let content: Bytes? = res.body?.asByteBuffer().map { .buffer($0) }
         return File(name: path, source: .filesystem(path: path), content: content, size: size)
     }
     
-    func create(_ filepath: String, content: ByteContent) async throws -> File {
+    func create(_ filepath: String, content: Bytes) async throws -> File {
         let path = resolvedPath(filepath)
         let pathExtension = path.components(separatedBy: ".").last
         let contentType = pathExtension.map { ContentType(fileExtension: $0) } ?? nil
@@ -60,11 +60,11 @@ private struct S3Filesystem: FilesystemProvider {
             req = S3.PutObjectRequest(body: .byteBuffer(buffer), bucket: bucket, contentType: contentType?.value, key: path)
         case .stream(let stream):
             req = S3.PutObjectRequest(body: .stream { eventLoop in
-                stream.read(on: eventLoop).map { output in
+                stream._read(on: eventLoop).map { output in
                     switch output {
-                    case .byteBuffer(let buffer):
+                    case .some(let buffer):
                         return .byteBuffer(buffer)
-                    case .end:
+                    case .none:
                         return .end
                     }
                 }
